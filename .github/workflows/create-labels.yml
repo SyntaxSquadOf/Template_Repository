@@ -1,0 +1,87 @@
+name: Create Labels for New Repository
+
+on:
+  workflow_dispatch:
+
+jobs:
+  create-labels:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Create Labels
+        uses: peter-evans/create-or-update-labels@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          labels: |
+            - name: feature
+              color: 2ECC71
+              description: Representa progreso o algo nuevo.
+            - name: bugfix
+              color: E74C3C
+              description: Asociado con problemas o errores.
+            - name: hotfix
+              color: E67E22
+              description: Para arreglos urgentes.
+            - name: refactor
+              color: 9B59B6
+              description: Para mejoras técnicas.
+            - name: style
+              color: 5DADE2
+              description: Representa limpieza o formato.
+            - name: test
+              color: F1C40F
+              description: Para pruebas, fácil de identificar.
+            - name: documentation
+              color: 3498DB
+              description: Asociado con información o escritura.
+            - name: performance
+              color: 1ABC9C
+              description: Representa optimización.
+            - name: chore
+              color: 7F8C8D
+              description: Para tareas de mantenimiento.
+            - name: in progress
+              color: 34495E
+              description: Para algo que aún está en desarrollo.
+            - name: ready for review
+              color: 27AE60
+              description: Indica que está listo para revisión.
+            - name: needs changes
+              color: F39C12
+              description: Sugiere ajustes pendientes.
+            - name: approved
+              color: 2ECC71
+              description: Indica aprobación.
+            - name: blocked
+              color: C0392B
+              description: Para dependencias o problemas.
+            - name: high priority
+              color: E74C3C
+              description: Algo crítico.
+            - name: medium priority
+              color: E67E22
+              description: Moderadamente importante.
+            - name: low priority
+              color: F7DC6F
+              description: Baja prioridad.
+            - name: breaking change
+              color: 8B0000
+              description: Algo disruptivo o crítico.
+            - name: non-breaking change
+              color: 48C9B0
+              description: Representa estabilidad.
+            - name: minor update
+              color: BDC3C7
+              description: Cambios pequeños o cosméticos.
+            - name: wip
+              color: 8E44AD
+              description: Work in Progress (en progreso).
+            - name: security
+              color: 34495E
+              description: Seguridad es crítico y serio.
+            - name: dependencies
+              color: 85C1E9
+              description: Para cambios de librerías.
+            - name: experimental
+              color: FD79A8
+              description: Para funcionalidades en prueba.
